@@ -9,6 +9,7 @@ import android.widget.Button
 import android.content.Intent
 import android.widget.ImageView
 import android.net.Uri
+import android.content.ActivityNotFoundException
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +47,38 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("https://www.instagram.com/$igUsername")
             startActivity(intent)
+        }
+
+//        val fb = findViewById<ImageView>(R.id.ic_fb)
+//        val fbUsername = "aryopratama04082000"
+//        fb.setOnClickListener {
+//            val intent = Intent(Intent.ACTION_VIEW)
+//            intent.data = Uri.parse("https://www.facebook.com/$fbUsername")
+//            startActivity(intent)
+//        }
+
+        val fb = findViewById<ImageView>(R.id.ic_fb)
+        fb.setOnClickListener {
+            val appFb = Uri.parse("https://www.facebook.com/aryopratama04082000")
+            val intent = Intent(Intent.ACTION_VIEW, appFb)
+            intent.setPackage("com.facebook.katana")
+            try {
+                startActivity(intent)
+            } catch (ActivityNotFoundException: ActivityNotFoundException) {
+                startActivity(Intent(Intent.ACTION_VIEW, appFb))
+            }
+        }
+
+        val tiktok = findViewById<ImageView>(R.id.ic_tiktok)
+        tiktok.setOnClickListener {
+            val appTiktok = Uri.parse("https://www.tiktok.com/@aryopratamaa")
+            val intent = Intent(Intent.ACTION_VIEW, appTiktok)
+            intent.setPackage("com.zhiliaoapp.musically")
+            try {
+                startActivity(intent)
+            } catch (ActivityNotFoundException: ActivityNotFoundException) {
+                startActivity(Intent(Intent.ACTION_VIEW, appTiktok))
+            }
         }
 
 

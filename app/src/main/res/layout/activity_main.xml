@@ -64,4 +64,24 @@
         app:layout_constraintTop_toBottomOf="@+id/btnKedua"
         app:srcCompat="@drawable/ic_call" />
 
+    <ImageView
+        android:id="@+id/ic_fb"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/ic_tiktok"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ic_whatsapp"
+        app:srcCompat="@drawable/ic_fb" />
+
+    <ImageView
+        android:id="@+id/ic_tiktok"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ic_whatsapp"
+        app:srcCompat="@drawable/ic_tiktok" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
