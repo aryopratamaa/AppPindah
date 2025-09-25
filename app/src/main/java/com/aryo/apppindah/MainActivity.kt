@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         val call = findViewById<ImageView>(R.id.ic_call)
         val noTelp = "+6282161965317"
         call.setOnClickListener {
