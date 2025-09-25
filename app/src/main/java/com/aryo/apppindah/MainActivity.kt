@@ -81,6 +81,19 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        val youtube = findViewById<ImageView>(R.id.ic_youtube)
+        youtube.setOnClickListener {
+            val appYoutube = Uri.parse("https://www.youtube.com/@mistergoyo")
+            val intent = Intent(Intent.ACTION_VIEW, appYoutube)
+            intent.setPackage("com.google.android.youtube")
+            try {
+                startActivity(intent)
+            } catch (ActivityNotFoundException: ActivityNotFoundException) {
+                startActivity(Intent(Intent.ACTION_VIEW, appYoutube))
+            }
+        }
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
